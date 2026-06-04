@@ -10,7 +10,19 @@ import { productRoutes } from './routes/product.js'
 export function createApp() {
   const app = express()
 
-  app.use(cors({ origin: process.env.CORS_ORIGIN ?? 'http://localhost:5173' }))
+  const allowedOrigins = (process.env.CORS_ORIGIN ?? 'http://localhost:5173')
+    .split(',')
+    .map(s => s.trim())
+
+  app.use(cors({
+    origin(origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true)
+      } else {
+        callback(new Error(`Origin ${origin} not allowed by CORS`))
+      }
+    },
+  }))
   app.use(express.json())
 
   app.get('/api/v1/health', (_req, res) => {
