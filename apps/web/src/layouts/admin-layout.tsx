@@ -32,7 +32,7 @@ export function AdminLayout() {
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-            <span className="text-sm text-zinc-500">{user?.company.name}</span>
+            <span className="text-sm text-zinc-500">{user?.company?.name}</span>
             <button
               onClick={handleLogout}
               className="text-sm text-red-500 hover:text-red-700"
