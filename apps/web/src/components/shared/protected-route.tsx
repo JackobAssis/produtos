@@ -1,0 +1,24 @@
+import { Navigate } from 'react-router-dom'
+import { useAuth } from '../../contexts/auth'
+
+type ProtectedRouteProps = {
+  children: React.ReactNode
+}
+
+export function ProtectedRoute({ children }: ProtectedRouteProps) {
+  const { user, loading } = useAuth()
+
+  if (loading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <p className="text-muted-foreground">Carregando...</p>
+      </div>
+    )
+  }
+
+  if (!user) {
+    return <Navigate to="/login" replace />
+  }
+
+  return <>{children}</>
+}

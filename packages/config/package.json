@@ -1,0 +1,10 @@
+{
+  "name": "@catalogpro/config",
+  "private": true,
+  "version": "0.0.0",
+  "exports": {
+    "./tsconfig/base": "./tsconfig.base.json",
+    "./tsconfig/api": "./tsconfig.api.json",
+    "./tsconfig/web": "./tsconfig.web.json"
+  }
+}
