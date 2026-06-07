@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "pnpm -r --parallel dev",
     "build": "pnpm -r build",
+    "start": "node apps/api/dist/index.js",
     "lint": "eslint .",
     "format": "prettier --write .",
     "typecheck": "pnpm -r typecheck",
