@@ -9,7 +9,7 @@ const envSchema = z.object({
   CORS_ORIGIN: z
     .string()
     .default(
-      'http://localhost:5173,http://localhost:4173,https://catalogpro.pages.dev',
+      'http://localhost:5173,http://localhost:4173,https://catalogpro.pages.dev,https://produtos-9di.pages.dev',
     ),
   R2_ACCOUNT_ID: z.string().optional(),
   R2_ACCESS_KEY_ID: z.string().optional(),
