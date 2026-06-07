@@ -6,8 +6,3 @@ buildCommand = "pnpm install && pnpm -F @catalogpro/api build"
 startCommand = "pnpm -F @catalogpro/api start"
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 3
-
-[[service.ports]]
-port = 3001
-protocol = "HTTP"
-public = true
