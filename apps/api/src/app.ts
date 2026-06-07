@@ -10,7 +10,7 @@ import { productRoutes } from './routes/product.js'
 export function createApp() {
   const app = express()
 
-  const allowedOrigins = (process.env.CORS_ORIGIN ?? 'http://localhost:5173')
+  const allowedOrigins = (process.env.CORS_ORIGIN ?? 'http://localhost:5173,http://localhost:4173,https://catalogpro.pages.dev')
     .split(',')
     .map(s => s.trim())
 
@@ -22,6 +22,10 @@ export function createApp() {
         callback(new Error(`Origin ${origin} not allowed by CORS`))
       }
     },
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    credentials: true,
+    maxAge: 86400,
   }))
   app.use(express.json())
 
