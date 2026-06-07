@@ -10,9 +10,18 @@ import { productRoutes } from './routes/product.js'
 export function createApp() {
   const app = express()
 
-  const allowedOrigins = (process.env.CORS_ORIGIN ?? 'http://localhost:5173,http://localhost:4173,https://catalogpro.pages.dev,https://produtos-9di.pages.dev')
+  const envOrigins = (process.env.CORS_ORIGIN ?? '')
     .split(',')
     .map(s => s.trim())
+    .filter(Boolean)
+
+  const allowedOrigins = [
+    ...envOrigins,
+    'http://localhost:5173',
+    'http://localhost:4173',
+    'https://catalogpro.pages.dev',
+    'https://produtos-9di.pages.dev',
+  ]
 
   app.use(cors({
     origin(origin, callback) {
