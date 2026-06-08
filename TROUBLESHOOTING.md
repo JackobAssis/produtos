@@ -4,7 +4,7 @@
 
 ### Sintomas
 ```
-curl https://api-production-0f20.up.railway.app/api/v1/health
+curl https://produtos-production.up.railway.app/api/v1/health
 # Retorna: HTTP 404 Not Found
 ```
 
@@ -75,7 +75,7 @@ Aguardar conclusão (ver logs verdes)
 **4. Testar Novamente**
 
 ```bash
-curl -I https://api-production-0f20.up.railway.app/api/v1/health
+curl -I https://produtos-production.up.railway.app/api/v1/health
 # Esperado: HTTP 200
 ```
 
@@ -173,7 +173,7 @@ Access to XMLHttpRequest at 'https://api.../auth/login' blocked by CORS policy
 curl -X OPTIONS \
   -H "Origin: https://produtos-9di.pages.dev" \
   -H "Access-Control-Request-Method: POST" \
-  https://api-production-0f20.up.railway.app/api/v1/auth/login \
+  https://produtos-production.up.railway.app/api/v1/auth/login \
   -v 2>&1 | grep -i access-control
 
 # Esperado:
@@ -186,7 +186,7 @@ curl -X OPTIONS \
 
 ```bash
 # Verificar se API está respondendo
-curl -I https://api-production-0f20.up.railway.app/api/v1/health
+curl -I https://produtos-production.up.railway.app/api/v1/health
 
 # Se 404: API não está rodando
 # Se 200: OK, mas CORS pode estar mal configurado
@@ -237,7 +237,7 @@ curl http://localhost:3001/api/v1/health
 ### 2. Health Check Railway
 
 ```bash
-curl -I https://api-production-0f20.up.railway.app/api/v1/health
+curl -I https://produtos-production.up.railway.app/api/v1/health
 
 # Esperado: HTTP 200
 # Se 404: Ver "Erro: HTTP 404"
@@ -407,18 +407,18 @@ pnpm -F @catalogpro/api build
 
 ```bash
 # 1. Health Endpoint
-curl -I https://api-production-0f20.up.railway.app/api/v1/health
+curl -I https://produtos-production.up.railway.app/api/v1/health
 # Deve retornar: HTTP 200
 
 # 2. CORS Headers
 curl -X OPTIONS \
   -H "Origin: https://produtos-9di.pages.dev" \
-  https://api-production-0f20.up.railway.app/api/v1/auth/login \
+  https://produtos-production.up.railway.app/api/v1/auth/login \
   -v 2>&1 | grep access-control
 # Deve retornar access-control-allow-origin
 
 # 3. Auth Endpoint
-curl -X POST https://api-production-0f20.up.railway.app/api/v1/auth/login \
+curl -X POST https://produtos-production.up.railway.app/api/v1/auth/login \
   -H "Content-Type: application/json" \
   -d '{"email":"test@test.com","password":"Test123!"}'
 # Não deve retornar 404

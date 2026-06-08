@@ -96,7 +96,7 @@
 
 ### What You See
 ```
-Access to XMLHttpRequest at 'https://api-production-0f20.up.railway.app/api/v1/auth/login'
+Access to XMLHttpRequest at 'https://produtos-production.up.railway.app/api/v1/auth/login'
 from origin 'https://produtos-9di.pages.dev' has been blocked by CORS policy:
 Response to preflight request doesn't pass access control check:
 No 'Access-Control-Allow-Origin' header is present on the requested resource.

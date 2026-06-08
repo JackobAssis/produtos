@@ -12,7 +12,7 @@ Root cause of CORS error identified and documented. **Not a CORS configuration i
 
 ### The Problem
 ```
-Access to XMLHttpRequest at 'https://api-production-0f20.up.railway.app/api/v1/auth/login' 
+Access to XMLHttpRequest at 'https://produtos-production.up.railway.app/api/v1/auth/login' 
 blocked by CORS policy: No 'Access-Control-Allow-Origin' header
 ```
 

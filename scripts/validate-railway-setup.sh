@@ -17,7 +17,7 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-API_URL="https://api-production-0f20.up.railway.app"
+API_URL="https://produtos-production.up.railway.app"
 ENDPOINTS=(
   "/api/v1/health"
   "/api/v1/auth/login"

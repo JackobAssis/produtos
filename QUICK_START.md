@@ -30,7 +30,7 @@ openssl rand -base64 32
 
 ## ✅ Verificação (2 min)
 ```bash
-curl -I https://api-production-0f20.up.railway.app/api/v1/health
+curl -I https://produtos-production.up.railway.app/api/v1/health
 # Esperado: HTTP 200 ✅
 ```
 

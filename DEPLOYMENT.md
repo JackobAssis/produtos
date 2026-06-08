@@ -97,7 +97,7 @@ R2_PUBLIC_URL=https://seu_bucket.seu_domain.com
 
 ```bash
 # Test 1: Health endpoint
-curl -I https://api-production-0f20.up.railway.app/api/v1/health
+curl -I https://produtos-production.up.railway.app/api/v1/health
 
 # Esperado: HTTP 200 OK
 # ✅ Se retornar 200, a API está funcionando!
@@ -107,7 +107,7 @@ curl -I https://api-production-0f20.up.railway.app/api/v1/health
 curl -X OPTIONS \
   -H "Origin: https://produtos-9di.pages.dev" \
   -H "Access-Control-Request-Method: POST" \
-  https://api-production-0f20.up.railway.app/api/v1/auth/login \
+  https://produtos-production.up.railway.app/api/v1/auth/login \
   -v | grep -i access-control
 
 # Esperado: access-control-allow-origin: https://produtos-9di.pages.dev
@@ -226,7 +226,7 @@ pnpm -F @catalogpro/web dev
    curl http://localhost:3001/api/v1/health
    
    # Railway (verificar logs se falhar)
-   curl https://api-production-0f20.up.railway.app/api/v1/health
+   curl https://produtos-production.up.railway.app/api/v1/health
    ```
 
 ---

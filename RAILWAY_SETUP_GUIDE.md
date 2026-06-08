@@ -132,7 +132,7 @@ Access-Control-Allow-Origin: https://produtos-9di.pages.dev
 ### Teste Manual:
 ```bash
 # Testar conexão básica
-curl -I https://api-production-0f20.up.railway.app/api/v1/health
+curl -I https://produtos-production.up.railway.app/api/v1/health
 
 # Esperado: HTTP 200 OK
 # ✅ Sucesso!
@@ -188,7 +188,7 @@ Access to XMLHttpRequest blocked by CORS policy
 ```bash
 curl -I \
   -H "Origin: https://produtos-9di.pages.dev" \
-  https://api-production-0f20.up.railway.app/api/v1/health
+  https://produtos-production.up.railway.app/api/v1/health
 ```
 
 Procure na resposta por:
