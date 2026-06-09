@@ -1,6 +1,6 @@
 [build]
 builder = "RAILPACK"
-buildCommand = "pnpm install && pnpm -F @catalogpro/api db:push && pnpm -F @catalogpro/api build"
+buildCommand = "pnpm install && pnpm -F @catalogpro/api build"
 
 [deploy]
 startCommand = "pnpm -F @catalogpro/api db:push && pnpm -F @catalogpro/api start"
